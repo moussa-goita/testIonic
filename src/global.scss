@@ -35,3 +35,13 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Ajouter dans global.scss */
+@media (prefers-color-scheme: dark) {
+  body {
+    --ion-background-color: #000;
+    --ion-text-color: #fff;
+  }
+}

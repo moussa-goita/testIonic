@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import {IonicModule} from "@ionic/angular";
@@ -11,7 +10,7 @@ import {IonicModule} from "@ionic/angular";
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonicModule]
+  imports: [CommonModule, FormsModule, IonicModule]
 })
 export class LoginPage {
 

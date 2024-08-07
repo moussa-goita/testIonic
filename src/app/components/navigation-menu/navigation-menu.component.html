@@ -1,0 +1,19 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ng-container *ngFor="let page of appPages">
+        <ion-menu-toggle auto-hide="false">
+          <ion-item [routerLink]="page.url" routerDirection="root" lines="none">
+            <ion-icon slot="start" [name]="page.icon"></ion-icon>
+            <ion-label>{{ page.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ng-container>
+    </ion-list>
+  </ion-content>
+</ion-menu>
