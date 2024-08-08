@@ -1,6 +1,56 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <app-navigation-menu></app-navigation-menu>
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="menu-list">
+          <ion-list-header>Gestion de Stock</ion-list-header>
+          <ion-note>company</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-item lines="none">
+          <ion-icon aria-hidden="true" slot="start" name="moon"></ion-icon>
+          <ion-label>Dark Mode</ion-label>
+          <ion-toggle [(ngModel)]="isDarkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+        </ion-item>
+      </ion-content>
+    </ion-menu>
+
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+
+  <!--<ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="dashboard" router-link="/dashboard">
+        <ion-icon aria-hidden="true" name="home"></ion-icon>
+        <ion-label>Dashboard</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="produits" router-link="/produit-list">
+        <ion-icon aria-hidden="true" name="cube"></ion-icon>
+        <ion-label>Produits</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="bons-entree" router-link="/bon-entree-list">
+        <ion-icon aria-hidden="true" name="enter"></ion-icon>
+        <ion-label>Bons d'Entrée</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="bons-sortie" router-link="/bon-sortie-list">
+        <ion-icon aria-hidden="true" name="exit"></ion-icon>
+        <ion-label>Bons de Sortie</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="fournisseurs" router-link="/fournisseur-list">
+        <ion-icon aria-hidden="true" name="people"></ion-icon>
+        <ion-label>Fournisseurs</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>-->
 </ion-app>

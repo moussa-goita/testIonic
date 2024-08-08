@@ -38,10 +38,18 @@
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-/* Ajouter dans global.scss */
-@media (prefers-color-scheme: dark) {
-  body {
-    --ion-background-color: #000;
-    --ion-text-color: #fff;
-  }
+
+body {
+  --ion-background-color: #ffffff;
+  --ion-text-color: #000000;
+}
+
+body.dark {
+  --ion-background-color: #222428;
+  --ion-text-color: #ffffff;
+}
+
+ion-app {
+  background-color: var(--ion-background-color);
+  color: var(--ion-text-color);
 }
