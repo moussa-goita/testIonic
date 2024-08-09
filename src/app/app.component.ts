@@ -7,6 +7,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { addIcons } from 'ionicons';
 import { homeOutline, homeSharp, cubeOutline, cubeSharp, enterOutline, enterSharp, exitOutline, exitSharp, pricetagsOutline, pricetagsSharp, keyOutline, keySharp, businessOutline, businessSharp, peopleOutline, peopleSharp, personOutline, personSharp } from 'ionicons/icons';
+import { AuthService } from "./services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -40,9 +41,10 @@ export class AppComponent implements OnInit {
     { title: 'Bons d\'Entrée', url: '/bon-entree-list', icon: 'enter' },
     { title: 'Bons de Sortie', url: '/bon-sortie-list', icon: 'exit' },
     { title: 'Fournisseurs', url: '/fournisseur-list', icon: 'people' },
+    { title: 'Mon Profil', url: '/user-profile', icon: 'person' },
   ];
 
-  constructor() {
+  constructor(public authService: AuthService) {
     addIcons({
       homeOutline, homeSharp,
       cubeOutline, cubeSharp,

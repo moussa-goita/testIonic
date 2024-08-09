@@ -24,6 +24,5 @@ export class NavigationMenuComponent {
     { title: 'Utilisateurs', url: '/utilisateur-list', icon: 'person' },
     { title: 'Roles', url: '/role-list', icon: 'key' }
   ];
-
   constructor() {}
 }

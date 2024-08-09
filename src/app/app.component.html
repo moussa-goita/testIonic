@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="authService.currentUserValue">
       <ion-content>
         <ion-list id="menu-list">
           <ion-list-header>Gestion de Stock</ion-list-header>
